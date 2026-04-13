@@ -28,7 +28,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NOISE OVERLAY ── */
     body::before {
       content: '';
       position: fixed;
@@ -39,27 +38,18 @@
       opacity: 0.4;
     }
 
-    /* ── GRADIENT MESH ── */
     .mesh {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
       background:
         radial-gradient(ellipse 60% 50% at 10% 20%, rgba(0,240,255,0.07) 0%, transparent 70%),
         radial-gradient(ellipse 50% 60% at 90% 80%, rgba(127,90,240,0.08) 0%, transparent 70%),
         radial-gradient(ellipse 40% 40% at 50% 50%, rgba(255,107,107,0.04) 0%, transparent 70%);
     }
 
-    /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       background: rgba(8,11,16,0.6);
@@ -71,352 +61,153 @@
       background: linear-gradient(135deg, var(--accent1), var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -0.02em;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
+    nav ul { list-style: none; display: flex; gap: 2rem; }
     nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-      position: relative;
+      color: var(--muted); text-decoration: none;
+      font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.3s; position: relative;
     }
-
     nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 1px;
-      background: var(--accent1);
-      transition: width 0.3s;
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1px; background: var(--accent1); transition: width 0.3s;
     }
-
     nav a:hover { color: var(--accent1); }
     nav a:hover::after { width: 100%; }
 
-    /* ── HERO ── */
     #hero {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 8rem 2rem 4rem;
-      max-width: 900px;
-      margin: 0 auto;
+      position: relative; z-index: 1; min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 8rem 2rem 4rem; max-width: 900px; margin: 0 auto;
     }
 
     .hero-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--accent1);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0;
+      font-family: 'Space Mono', monospace; font-size: 0.75rem;
+      color: var(--accent1); letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 1.5rem; opacity: 0;
       animation: fadeUp 0.6s 0.2s forwards;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.4s forwards;
+      font-size: clamp(3rem, 8vw, 6rem); font-weight: 800;
+      line-height: 1; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.6s 0.4s forwards;
     }
 
     h1 .grad {
       background: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 50%, var(--accent3) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 200% 200%;
-      animation: gradShift 4s ease infinite;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-size: 200% 200%; animation: gradShift 4s ease infinite;
     }
 
     .hero-desc {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 500px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.6s forwards;
+      font-size: 1.1rem; color: var(--muted); max-width: 500px;
+      line-height: 1.7; margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 0.6s 0.6s forwards;
     }
 
     .hero-btns {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.8s forwards;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.6s 0.8s forwards;
     }
 
     .btn {
-      padding: 0.75rem 1.8rem;
-      border-radius: 4px;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.85rem;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      letter-spacing: 0.05em;
+      padding: 0.75rem 1.8rem; border-radius: 4px;
+      font-family: 'Space Mono', monospace; font-size: 0.85rem;
+      text-decoration: none; cursor: pointer;
+      transition: all 0.3s; letter-spacing: 0.05em;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      color: #080b10;
-      font-weight: 700;
-      border: none;
+      color: #080b10; font-weight: 700; border: none;
     }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,240,255,0.25); }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,240,255,0.25);
-    }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover { border-color: var(--accent2); color: var(--accent2); transform: translateY(-2px); }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent2);
-      color: var(--accent2);
-      transform: translateY(-2px);
-    }
-
-    /* ── SECTION COMMON ── */
-    section {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
-    }
+    section { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 5rem 2rem; }
 
     .section-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--accent2);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      font-family: 'Space Mono', monospace; font-size: 0.7rem;
+      color: var(--accent2); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem;
     }
 
-    h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 800;
-      margin-bottom: 3rem;
-      letter-spacing: -0.02em;
-    }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 3rem; letter-spacing: -0.02em; }
 
-    /* ── SKILLS ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 1rem;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1rem; }
 
     .skill-chip {
-      padding: 0.8rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--surface);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-align: center;
-      transition: all 0.3s;
-      cursor: default;
+      padding: 0.8rem 1rem; border: 1px solid var(--border); border-radius: 6px;
+      background: var(--surface); font-family: 'Space Mono', monospace;
+      font-size: 0.78rem; color: var(--muted); text-align: center; transition: all 0.3s; cursor: default;
     }
+    .skill-chip:hover { border-color: var(--accent1); color: var(--accent1); background: rgba(0,240,255,0.04); transform: translateY(-3px); }
 
-    .skill-chip:hover {
-      border-color: var(--accent1);
-      color: var(--accent1);
-      background: rgba(0,240,255,0.04);
-      transform: translateY(-3px);
-    }
-
-    /* ── PROJECTS ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
 
     .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.8rem;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 8px; padding: 1.8rem; transition: all 0.3s; position: relative; overflow: hidden;
     }
-
     .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
       background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s;
+      transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
     }
-
-    .project-card:hover {
-      border-color: rgba(0,240,255,0.2);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-
+    .project-card:hover { border-color: rgba(0,240,255,0.2); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
     .project-card:hover::before { transform: scaleX(1); }
-
-    .project-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-
-    .project-card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
+    .project-card h3 { font-size: 1rem; margin-bottom: 0.5rem; font-weight: 700; }
+    .project-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.2rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 3px;
-      background: rgba(127,90,240,0.12);
-      color: var(--accent2);
-      border: 1px solid rgba(127,90,240,0.2);
+      font-family: 'Space Mono', monospace; font-size: 0.65rem;
+      padding: 0.2rem 0.6rem; border-radius: 3px;
+      background: rgba(127,90,240,0.12); color: var(--accent2); border: 1px solid rgba(127,90,240,0.2);
     }
 
-    /* ── CONTACT ── */
     .contact-box {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--surface);
-      padding: 3rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+      border: 1px solid var(--border); border-radius: 8px; background: var(--surface);
+      padding: 3rem; text-align: center; position: relative; overflow: hidden;
     }
-
     .contact-box::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(127,90,240,0.15), transparent 70%);
-      pointer-events: none;
+      content: ''; position: absolute; bottom: -60px; right: -60px; width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(127,90,240,0.15), transparent 70%); pointer-events: none;
     }
+    .contact-box p { color: var(--muted); margin-bottom: 2rem; font-size: 1rem; line-height: 1.7; }
+    .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-    .contact-box p {
-      color: var(--muted);
-      margin-bottom: 2rem;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* ── FOOTER ── */
     footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 2rem;
+      position: relative; z-index: 1; text-align: center; padding: 2rem;
       border-top: 1px solid var(--border);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
+      font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted);
     }
-
     footer span { color: var(--accent3); }
 
-    /* ── SCROLL REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
 
-    /* ── CURSOR DOT ── */
-    .cursor {
-      width: 8px; height: 8px;
-      background: var(--accent1);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      transition: transform 0.1s;
-      mix-blend-mode: screen;
-    }
+    .cursor { width: 8px; height: 8px; background: var(--accent1); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; mix-blend-mode: screen; }
+    .cursor-ring { width: 36px; height: 36px; border: 1px solid rgba(0,240,255,0.4); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: all 0.12s ease; }
 
-    .cursor-ring {
-      width: 36px; height: 36px;
-      border: 1px solid rgba(0,240,255,0.4);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      transition: all 0.12s ease;
-    }
-
-    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
       from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes gradShift {
       0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+      50%       { background-position: 100% 50%; }
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       nav ul { gap: 1.2rem; }
       nav a { font-size: 0.75rem; }
       .contact-box { padding: 2rem 1.2rem; }
       .skills-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
     }
-
-    @media (max-width: 400px) {
-      nav ul { display: none; }
-    }
+    @media (max-width: 400px) { nav ul { display: none; } }
   </style>
 </head>
 <body>
@@ -425,7 +216,6 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- NAV -->
 <nav>
   <div class="logo">yuag-dev</div>
   <ul>
@@ -435,9 +225,8 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div id="hero">
-  <p class="hero-tag">// Web Scraper & Laravel Developer</p>
+  <p class="hero-tag">// Web Scraper &amp; Laravel Developer</p>
   <h1>
     Building<br/>
     <span class="grad">digital things</span><br/>
@@ -453,7 +242,6 @@
   </div>
 </div>
 
-<!-- SKILLS -->
 <section id="skills">
   <p class="section-label reveal">// What I work with</p>
   <h2 class="reveal">Skills</h2>
@@ -471,7 +259,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <p class="section-label reveal">// What I've built</p>
   <h2 class="reveal">Projects</h2>
@@ -506,7 +293,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <p class="section-label reveal">// Let's talk</p>
   <h2 class="reveal">Contact</h2>
@@ -514,507 +300,16 @@
     <p>Open for freelance work and collaborations.<br/>Drop a message anytime.</p>
     <div class="contact-links">
       <a href="mailto:yuagdev@gmail.com" class="btn btn-primary">Email Me</a>
-      <a href="https://github.com/yuag-dev" class="btn btn-outline" target="_blank">GitHub</a>
+      <a href="https://github.com/yuag-scrape" class="btn btn-outline" target="_blank">GitHub</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <span>yuag-dev</span> · built with HTML & CSS
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Custom cursor
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursor.style.left = mx - 4 + 'px';
-    cursor.style.top  = my - 4 + 'px';
-  });
-
-  function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx - 18 + 'px';
-    ring.style.top  = ry - 18 + 'px';
-    requestAnimationFrame(animRing);
-  }
-  animRing();
-
-  document.querySelectorAll('a, button, .skill-chip').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.style.transform = 'scale(1.6)');
-    el.addEventListener('mouseleave', () => ring.style.transform = 'scale(1)');
-  });
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 60);-family: 'Space Mono', monospace;
-      font-size: 1.1rem;
-      background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.02em;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-      position: relative;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 1px;
-      background: var(--accent1);
-      transition: width 0.3s;
-    }
-
-    nav a:hover { color: var(--accent1); }
-    nav a:hover::after { width: 100%; }
-
-    /* ── HERO ── */
-    #hero {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 8rem 2rem 4rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--accent1);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.2s forwards;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.4s forwards;
-    }
-
-    h1 .grad {
-      background: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 50%, var(--accent3) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 200% 200%;
-      animation: gradShift 4s ease infinite;
-    }
-
-    .hero-desc {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 500px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.6s forwards;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.6s 0.8s forwards;
-    }
-
-    .btn {
-      padding: 0.75rem 1.8rem;
-      border-radius: 4px;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.85rem;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      letter-spacing: 0.05em;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      color: #080b10;
-      font-weight: 700;
-      border: none;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,240,255,0.25);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent2);
-      color: var(--accent2);
-      transform: translateY(-2px);
-    }
-
-    /* ── SECTION COMMON ── */
-    section {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 5rem 2rem;
-    }
-
-    .section-label {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.7rem;
-      color: var(--accent2);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    h2 {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 800;
-      margin-bottom: 3rem;
-      letter-spacing: -0.02em;
-    }
-
-    /* ── SKILLS ── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 1rem;
-    }
-
-    .skill-chip {
-      padding: 0.8rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: var(--surface);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--muted);
-      text-align: center;
-      transition: all 0.3s;
-      cursor: default;
-    }
-
-    .skill-chip:hover {
-      border-color: var(--accent1);
-      color: var(--accent1);
-      background: rgba(0,240,255,0.04);
-      transform: translateY(-3px);
-    }
-
-    /* ── PROJECTS ── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.8rem;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s;
-    }
-
-    .project-card:hover {
-      border-color: rgba(0,240,255,0.2);
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-    }
-
-    .project-card:hover::before { transform: scaleX(1); }
-
-    .project-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-
-    .project-card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.65rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 3px;
-      background: rgba(127,90,240,0.12);
-      color: var(--accent2);
-      border: 1px solid rgba(127,90,240,0.2);
-    }
-
-    /* ── CONTACT ── */
-    .contact-box {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--surface);
-      padding: 3rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .contact-box::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(127,90,240,0.15), transparent 70%);
-      pointer-events: none;
-    }
-
-    .contact-box p {
-      color: var(--muted);
-      margin-bottom: 2rem;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
-
-    footer span { color: var(--accent3); }
-
-    /* ── SCROLL REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* ── CURSOR DOT ── */
-    .cursor {
-      width: 8px; height: 8px;
-      background: var(--accent1);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      transition: transform 0.1s;
-      mix-blend-mode: screen;
-    }
-
-    .cursor-ring {
-      width: 36px; height: 36px;
-      border: 1px solid rgba(0,240,255,0.4);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      transition: all 0.12s ease;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-      from { opacity: 0; transform: translateY(20px); }
-    }
-
-    @keyframes gradShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
-      nav ul { gap: 1.2rem; }
-      nav a { font-size: 0.75rem; }
-      .contact-box { padding: 2rem 1.2rem; }
-      .skills-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
-    }
-
-    @media (max-width: 400px) {
-      nav ul { display: none; }
-    }
-  </style>
-</head>
-<body>
-
-<div class="mesh"></div>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
-<!-- NAV -->
-<nav>
-  <div class="logo">yuag-dev</div>
-  <ul>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<div id="hero">
-  <p class="hero-tag">// Web Scraper & Laravel Developer</p>
-  <h1>
-    Building<br/>
-    <span class="grad">digital things</span><br/>
-    that work.
-  </h1>
-  <p class="hero-desc">
-    Yusuf — developer who scrapes the web, builds Laravel apps,
-    and turns raw data into something useful.
-  </p>
-  <div class="hero-btns">
-    <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="#contact" class="btn btn-outline">Get in Touch</a>
-  </div>
-</div>
-
-<!-- SKILLS -->
-<section id="skills">
-  <p class="section-label reveal">// What I work with</p>
-  <h2 class="reveal">Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-chip reveal">Web Scraping</div>
-    <div class="skill-chip reveal">Python</div>
-    <div class="skill-chip reveal">Laravel</div>
-    <div class="skill-chip reveal">PHP</div>
-    <div class="skill-chip reveal">BeautifulSoup</div>
-    <div class="skill-chip reveal">Selenium</div>
-    <div class="skill-chip reveal">HTML / CSS</div>
-    <div class="skill-chip reveal">JavaScript</div>
-    <div class="skill-chip reveal">MySQL</div>
-    <div class="skill-chip reveal">Linux</div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <p class="section-label reveal">// What I've built</p>
-  <h2 class="reveal">Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card reveal">
-      <h3>Web Scraper</h3>
-      <p>Python scraper that extracts and structures data from websites automatically. Handles pagination, dynamic content, and exports to JSON/CSV.</p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">BeautifulSoup</span>
-        <span class="tag">Selenium</span>
-      </div>
-    </div>
-    <div class="project-card reveal">
-      <h3>Laravel App</h3>
-      <p>Full-stack web application built with Laravel. Clean REST API, auth system, and admin dashboard.</p>
-      <div class="project-tags">
-        <span class="tag">Laravel</span>
-        <span class="tag">PHP</span>
-        <span class="tag">MySQL</span>
-      </div>
-    </div>
-    <div class="project-card reveal">
-      <h3>Data Pipeline</h3>
-      <p>Automated pipeline that scrapes, cleans, and stores data into a database ready for use in a Laravel backend.</p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Laravel</span>
-        <span class="tag">MySQL</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <p class="section-label reveal">// Let's talk</p>
-  <h2 class="reveal">Contact</h2>
-  <div class="contact-box reveal">
-    <p>Open for freelance work and collaborations.<br/>Drop a message anytime.</p>
-    <div class="contact-links">
-      <a href="mailto:you@email.com" class="btn btn-primary">Email Me</a>
-      <a href="https://github.com/yuag-dev" class="btn btn-outline" target="_blank">GitHub</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <span>yuag-dev</span> · built with HTML & CSS
+  <span>yuag-dev</span> &middot; built with HTML &amp; CSS
 </footer>
 
 <script>
-  // Custom cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -1039,7 +334,6 @@
     el.addEventListener('mouseleave', () => ring.style.transform = 'scale(1)');
   });
 
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
